@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://incident-response-backend-swhf.onrender.com';
 
 // Create axios instance
 const api = axios.create({
