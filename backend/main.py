@@ -16,7 +16,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,9 +31,18 @@ async def root():
     return {"message": "Incident Response API is running!"}
 
 @app.get("/health")
-async def health_check(db = Depends(get_db)):
+async def health_check():
     # Test Firebase connection
-    firebase_healthy = test_connection()
+    firebase_healthy = False
+    try:
+        db = get_firestore()
+        if db:
+            # Try a simple operation
+            collections = db.collections()
+            list(collections)
+            firebase_healthy = True
+    except Exception as e:
+        print(f"Health check Firebase error: {e}")
     
     return {
         "status": "healthy" if firebase_healthy else "degraded",

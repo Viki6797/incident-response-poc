@@ -1,16 +1,47 @@
 # Python
-backend/venv/
-backend/__pycache__/
-backend/**/__pycache__/
+__pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+backend/venv/
+backend/.venv/
+venv/
+env/
+ENV/
 
 # Secrets
 backend/firebase-key.json
+firebase-key.json  # In case it's in root
+backend/.env
+.env
+.env.*
+!*.example.env  # Keep example files
 
 # Node
 frontend/node_modules/
 frontend/dist/
+frontend/.env
+frontend/.env.*
 
-# Env
-.env
-.env.*
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
