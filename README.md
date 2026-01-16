@@ -37,24 +37,23 @@ Copy code
 
 ## 📁 Project Structure
 
+```plaintext
 incident-response-poc/
-├── frontend/ # React Vite application
-│ ├── src/
-│ │ ├── components/ # UI components
-│ │ ├── services/ # API services
-│ │ └── ...
-│ └── package.json
+├── frontend/                # React Vite application
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   ├── services/        # API services
+│   │   └── ...
+│   └── package.json
 │
-├── backend/ # FastAPI Python backend
-│ ├── models/ # Pydantic models
-│ ├── services/ # Firebase services
-│ ├── main.py # FastAPI app
-│ └── requirements.txt
+├── backend/                 # FastAPI Python backend
+│   ├── models/              # Pydantic models
+│   ├── services/            # Firebase services
+│   ├── main.py              # FastAPI app
+│   └── requirements.txt
 │
 └── README.md
 
-yaml
-Copy code
 
 ---
 
